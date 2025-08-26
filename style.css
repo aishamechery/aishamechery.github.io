@@ -1,0 +1,38 @@
+a:hover {
+	font-style: bold;
+}
+
+nav a:hover::before {
+	opacity: 1;
+	font-style: normal;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 100%;
+}
+
+td {
+    font-size: 1.00em;
+    padding:15px 45px 5px 45px;
+}
+
+table td.shrink {
+    white-space:nowrap
+}
+
+a {
+    color: maroon;
+}
+
+body {
+  link: "#4d4d4d";
+  font size: "2px";
+  face: "arial,sans-serif";
+  background-color: "#add8e6";
+		   /* (PART A) SET BACKGROUND IMAGE */
+  background-image: url("images/bmc1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
