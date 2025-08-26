@@ -16,7 +16,7 @@ td {
     font-size: 1.00em;
     padding:15px 45px 5px 45px;
 	color: white;
-	background-color: "tomato";
+	background-color: rgba(255, 0, 0, 0.2);
 }
 
 table td.shrink {
@@ -25,7 +25,7 @@ table td.shrink {
 
 a {
     color: lightblue;
-	background-color: "tomato";
+	background-color: rgba(255, 0, 0, 0.2);
 }
 
 body {
