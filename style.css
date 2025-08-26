@@ -16,16 +16,15 @@ td {
     font-size: 1.00em;
     padding:15px 45px 5px 45px;
 	color: white;
-	background-color: rgba(255, 0, 0, 0.2);
 }
 
 table td.shrink {
     white-space:nowrap
+	background-color: rgba(255, 0, 0, 0.2);
 }
 
 a {
     color: lightblue;
-	background-color: rgba(255, 0, 0, 0.2);
 }
 
 body {
