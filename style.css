@@ -12,9 +12,13 @@ html {
     font-size: 100%;
 }
 
+table{
+    margin:0 0 0 25px;
+}
+
 td {
     font-size: 1.00em;
-    padding:0px 0px 30px 0px;
+    padding:0 0 30px 0;
 	color: #1D4085;
 }
 
