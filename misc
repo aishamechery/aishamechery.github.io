@@ -17,3 +17,14 @@
 	       [&nbsp; <a href="notes.html">notes</a> &nbsp;]
 	       &nbsp; &nbsp; &nbsp; &nbsp;
 		-->
+
+@media only screen and (max-width: 600px) {
+table{
+    margin:0 0 0 5px;
+	}
+}
+@media only screen and (min-width: 600px) {
+table{
+    margin:0 0 0 25px;
+	}
+}
