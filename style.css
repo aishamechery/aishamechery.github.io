@@ -45,18 +45,21 @@ a:focus {
 .content {
     position: relative;
     min-height: 100vh;
-    padding-top: 20px;
+    padding: 20px 75px;
 }
 
 
 /*
-   Headshot is centered horizontally
-   on the entire page.
+   Headshot: top right
 */
 
 .profile-table {
-    margin: 0 auto;
-    border-collapse: collapse;
+    position: absolute;
+
+    top: 20px;
+    right: 75px;
+
+    margin: 0;
 }
 
 .profile-image {
@@ -68,17 +71,16 @@ a:focus {
 
 
 /*
-   Green information box.
-
-   It sits on the left side of the screen
-   while the headshot remains centered.
+   Information box: bottom left
 */
 
 .info-table {
     position: absolute;
 
-    top: 20px;
     left: 75px;
+    bottom: 50px;
+
+    margin: 0;
 
     background-color: rgba(170, 255, 0, 0.7);
     color: #1D4085;
@@ -88,7 +90,7 @@ a:focus {
 }
 
 
-/* Individual information rows */
+/* Information rows */
 
 .info-table td {
     padding: 0 15px 30px 15px;
@@ -104,38 +106,27 @@ a:focus {
 
 
 /*
-   Two-column layout inside each row.
-
-   This is what makes wrapped research interests
-   line up with the text rather than with the label.
+   Label + information columns
 */
 
 .info-line {
     display: grid;
-
     grid-template-columns: max-content max-content;
-
     column-gap: 15px;
-
     align-items: start;
 }
-
-
-/*
-   The research value needs to be allowed
-   to wrap when necessary.
-*/
 
 .info-line span {
     min-width: 0;
 }
 
 
-/* CV link */
+/* CV */
 
 .cv-link {
     text-align: left;
 }
+
 
 
 /* ========================================
