@@ -26,6 +26,20 @@ a {
     color: #2b4010;
 }
 
+@media only screen and {max-width: 1023px} {
+	body {
+  link: "#4d4d4d";
+  font-size: "2px";
+  face: "arial,sans-serif";
+  color: "black";
+		   /* (PART A) SET BACKGROUND IMAGE */
+  background-image: url("bmc.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+}
+
 @media only screen and {min-width: 1024px} {
 	body {
   link: "#4d4d4d";
