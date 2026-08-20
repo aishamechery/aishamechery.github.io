@@ -152,23 +152,20 @@ a:focus {
         background-repeat: no-repeat;
     }
 
-
     .content {
         min-height: 0;
-
         padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
     }
 
-
     /*
-       25% smaller than the original 275px.
-       275 × 0.75 = 206.25px
+       Original: 275px
+       Mobile: 75% of 275px = 206px
     */
 
     .profile-table {
-        margin: 0 auto 35px auto;
+        margin: 0 auto 55px auto;
     }
 
     .profile-image {
@@ -176,10 +173,8 @@ a:focus {
         height: auto;
     }
 
-
     /*
-       Return the green box to normal document
-       flow on small screens.
+       Put the green box back into normal flow.
     */
 
     .info-table {
@@ -187,12 +182,10 @@ a:focus {
 
         width: fit-content;
         max-width: 100%;
-
         margin: 0 auto;
 
         background-color: rgba(170, 255, 0, 0.7);
     }
-
 
     .info-table td {
         padding-left: 12px;
@@ -200,25 +193,27 @@ a:focus {
         padding-bottom: 25px;
     }
 
-
     /*
-       On a phone, use a flexible second column
-       so long research text wraps naturally.
+       The first column contains the label
+       ("Research interests:"), while the second
+       contains the actual text.
+
+       Wrapped lines therefore start at exactly
+       the same position as the first line.
     */
 
     .info-line {
+        display: grid;
         grid-template-columns: max-content minmax(0, 1fr);
-
         column-gap: 12px;
+        align-items: start;
     }
 
+    .info-line span {
+        min-width: 0;
+    }
 
-    /*
-       Prevent the green box from becoming wider
-       than the phone screen.
-    */
-
-    .info-table {
-        box-sizing: border-box;
+    .info-table tr:last-child td {
+        padding-bottom: 15px;
     }
 }
