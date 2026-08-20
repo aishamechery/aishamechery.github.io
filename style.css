@@ -1,3 +1,7 @@
+/* ========================================
+   GENERAL
+   ======================================== */
+
 html {
     -webkit-text-size-adjust: 100%;
     font-size: 100%;
@@ -11,7 +15,6 @@ body {
     font-size: 16px;
     color: black;
 
-    /* Original, fully saturated background */
     background-image: url("bmc.jpeg");
     background-position: center center;
     background-size: cover;
@@ -36,33 +39,47 @@ a:focus {
 
 
 /* ========================================
-   DESKTOP + HORIZONTAL TABLETS
+   DESKTOP / HORIZONTAL TABLETS
    ======================================== */
 
 .content {
-    margin-left: 75px;
+    position: relative;
+    min-height: 100vh;
     padding-top: 20px;
 }
 
+
+/*
+   Headshot is centered horizontally
+   on the entire page.
+*/
+
 .profile-table {
-    margin: 0;
+    margin: 0 auto;
+    border-collapse: collapse;
 }
 
 .profile-image {
     display: block;
+
     width: 275px;
     height: auto;
 }
 
 
 /*
-   The green box.
-   Keep its width determined by its contents,
-   like the original website.
+   Green information box.
+
+   It sits on the left side of the screen
+   while the headshot remains centered.
 */
 
 .info-table {
-    margin-top: 0;
+    position: absolute;
+
+    top: 20px;
+    left: 75px;
+
     background-color: rgba(170, 255, 0, 0.7);
     color: #1D4085;
 
@@ -70,9 +87,11 @@ a:focus {
     border-spacing: 0;
 }
 
+
+/* Individual information rows */
+
 .info-table td {
     padding: 0 15px 30px 15px;
-    white-space: nowrap;
 }
 
 .info-table tr:first-child td {
@@ -84,61 +103,122 @@ a:focus {
 }
 
 
+/*
+   Two-column layout inside each row.
+
+   This is what makes wrapped research interests
+   line up with the text rather than with the label.
+*/
+
+.info-line {
+    display: grid;
+
+    grid-template-columns: max-content max-content;
+
+    column-gap: 15px;
+
+    align-items: start;
+}
+
+
+/*
+   The research value needs to be allowed
+   to wrap when necessary.
+*/
+
+.info-line span {
+    min-width: 0;
+}
+
+
+/* CV link */
+
+.cv-link {
+    text-align: left;
+}
+
+
 /* ========================================
-   PHONES + VERTICAL TABLETS
+   PHONES / VERTICAL TABLETS
    ======================================== */
 
 @media only screen and (max-width: 767px) {
 
     body {
-        /*
-           Don't use fixed attachment on phones.
-           Some mobile browsers handle it poorly.
-        */
         background-attachment: scroll;
-
-        /*
-           Keep the image completely saturated.
-        */
         background-image: url("bmc.jpeg");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
     }
 
+
     .content {
-        margin-left: 20px;
-        margin-right: 20px;
+        min-height: 0;
+
         padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /*
+       25% smaller than the original 275px.
+       275 × 0.75 = 206.25px
+    */
+
+    .profile-table {
+        margin: 0 auto 35px auto;
     }
 
     .profile-image {
-        /*
-           Scale down while never becoming wider
-           than the phone screen.
-        */
-        width: min(275px, 75vw);
+        width: 206px;
         height: auto;
     }
 
+
+    /*
+       Return the green box to normal document
+       flow on small screens.
+    */
+
     .info-table {
-        /*
-           On small screens the box should fit
-           inside the screen rather than forcing
-           horizontal scrolling.
-        */
-        width: auto;
+        position: static;
+
+        width: fit-content;
         max-width: 100%;
+
+        margin: 0 auto;
+
+        background-color: rgba(170, 255, 0, 0.7);
     }
 
-    .info-table td {
-        /*
-           Allow long research-interest text to wrap.
-        */
-        white-space: normal;
 
+    .info-table td {
         padding-left: 12px;
         padding-right: 12px;
         padding-bottom: 25px;
+    }
+
+
+    /*
+       On a phone, use a flexible second column
+       so long research text wraps naturally.
+    */
+
+    .info-line {
+        grid-template-columns: max-content minmax(0, 1fr);
+
+        column-gap: 12px;
+    }
+
+
+    /*
+       Prevent the green box from becoming wider
+       than the phone screen.
+    */
+
+    .info-table {
+        box-sizing: border-box;
     }
 }
