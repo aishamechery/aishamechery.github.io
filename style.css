@@ -77,8 +77,8 @@ a:focus {
 .info-table {
     position: absolute;
 
-    left: 75px;
-    bottom: 50px;
+    left: 100px;
+    bottom: 150px;
 
     margin: 0;
 
@@ -97,7 +97,7 @@ a:focus {
 }
 
 .info-table tr:first-child td {
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .info-table tr:last-child td {
