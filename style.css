@@ -11,11 +11,14 @@ body {
     font-size: 16px;
     color: black;
 
+    /* Original, fully saturated background */
     background-image: url("bmc.jpeg");
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    min-height: 100vh;
 }
 
 a {
@@ -31,9 +34,18 @@ a:focus {
     outline-offset: 2px;
 }
 
-table {
-    font-family: Arial, sans-serif;
-    font-size: 1em;
+
+/* ========================================
+   DESKTOP + HORIZONTAL TABLETS
+   ======================================== */
+
+.content {
+    margin-left: 75px;
+    padding-top: 20px;
+}
+
+.profile-table {
+    margin: 0;
 }
 
 .profile-image {
@@ -42,45 +54,91 @@ table {
     height: auto;
 }
 
-.info {
-    max-width: 90%;
+
+/*
+   The green box.
+   Keep its width determined by its contents,
+   like the original website.
+*/
+
+.info-table {
+    margin-top: 0;
     background-color: rgba(170, 255, 0, 0.7);
     color: #1D4085;
+
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
-.info td {
+.info-table td {
     padding: 0 15px 30px 15px;
+    white-space: nowrap;
 }
 
-.info td:first-child {
+.info-table tr:first-child td {
     padding-top: 0;
 }
 
-.info .shrink {
-    white-space: normal;
+.info-table tr:last-child td {
+    padding-bottom: 15px;
 }
 
-@media only screen and (max-width: 600px) {
+
+/* ========================================
+   PHONES + VERTICAL TABLETS
+   ======================================== */
+
+@media only screen and (max-width: 767px) {
 
     body {
+        /*
+           Don't use fixed attachment on phones.
+           Some mobile browsers handle it poorly.
+        */
         background-attachment: scroll;
+
+        /*
+           Keep the image completely saturated.
+        */
+        background-image: url("bmc.jpeg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .content {
-        margin-left: 20px !important;
+        margin-left: 20px;
         margin-right: 20px;
+        padding-top: 20px;
     }
 
     .profile-image {
-        width: min(275px, 80vw);
+        /*
+           Scale down while never becoming wider
+           than the phone screen.
+        */
+        width: min(275px, 75vw);
+        height: auto;
     }
 
-    .info {
-        max-width: calc(100vw - 40px);
+    .info-table {
+        /*
+           On small screens the box should fit
+           inside the screen rather than forcing
+           horizontal scrolling.
+        */
+        width: auto;
+        max-width: 100%;
     }
 
-    .info td {
-        padding-left: 15px;
-        padding-right: 15px;
+    .info-table td {
+        /*
+           Allow long research-interest text to wrap.
+        */
+        white-space: normal;
+
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 25px;
     }
 }
