@@ -1,3 +1,18 @@
+FOR BODY CSS
+
+    <!
+    background-image: url("bmc.jpeg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+   >
+
+
+
+
 
 <!--      <tr>
       <td class="shrink">
