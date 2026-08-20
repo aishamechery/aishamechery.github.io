@@ -97,7 +97,7 @@ a:focus {
 }
 
 .info-table tr:first-child td {
-    padding-top: 0;
+    padding-top: 20px;
 }
 
 .info-table tr:last-child td {
@@ -210,6 +210,10 @@ a:focus {
     .info-line span {
         min-width: 0;
     }
+
+   .info-table tr:first-child td {
+    padding-top: 20px;
+}
 
     .info-table tr:last-child td {
         padding-bottom: 15px;
