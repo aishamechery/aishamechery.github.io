@@ -143,6 +143,13 @@ a:focus {
    ======================================== */
 
 @media only screen and (max-width: 767px) {
+    .research-line {
+        grid-template-columns: 105px minmax(0, 1fr);
+    }
+
+    .research-line b {
+        line-height: 1.25;
+    }
 
     body {
         background-attachment: scroll;
