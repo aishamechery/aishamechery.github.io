@@ -128,19 +128,11 @@ a:focus {
 }
 
 
-
 /* ========================================
    PHONES / VERTICAL TABLETS
    ======================================== */
 
 @media only screen and (max-width: 767px) {
-    .research-line {
-        grid-template-columns: 105px minmax(0, 1fr);
-    }
-
-    .research-line b {
-        line-height: 1.25;
-    }
 
     body {
         background-attachment: scroll;
@@ -150,29 +142,47 @@ a:focus {
         background-repeat: no-repeat;
     }
 
+
+    /*
+       Mobile layout returns both elements
+       to normal document flow.
+    */
+
     .content {
         min-height: 0;
+
         padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
     }
 
+
     /*
-       Original: 275px
-       Mobile: 75% of 275px = 206px
+       IMPORTANT:
+       Override the desktop absolute positioning.
     */
 
     .profile-table {
+        position: static;
+
         margin: 0 auto 55px auto;
     }
 
+
+    /*
+       25% smaller than the original 275px.
+    */
+
     .profile-image {
+        display: block;
+
         width: 206px;
         height: auto;
     }
 
+
     /*
-       Put the green box back into normal flow.
+       Green information box below the photo.
     */
 
     .info-table {
@@ -180,10 +190,16 @@ a:focus {
 
         width: fit-content;
         max-width: 100%;
+
         margin: 0 auto;
 
         background-color: rgba(170, 255, 0, 0.7);
     }
+
+
+    /*
+       Mobile cell spacing.
+    */
 
     .info-table td {
         padding-left: 12px;
@@ -191,29 +207,54 @@ a:focus {
         padding-bottom: 25px;
     }
 
-    /*
-       The first column contains the label
-       ("Research interests:"), while the second
-       contains the actual text.
 
-       Wrapped lines therefore start at exactly
-       the same position as the first line.
+    /*
+       Label + text layout.
     */
 
     .info-line {
         display: grid;
-        grid-template-columns: max-content minmax(0, 1fr);
+
+        grid-template-columns:
+            max-content
+            minmax(0, 1fr);
+
         column-gap: 12px;
+
         align-items: start;
     }
+
 
     .info-line span {
         min-width: 0;
     }
 
-   .info-table tr:first-child td {
-    padding-top: 20px;
-}
+
+    /*
+       "Research interests:" becomes two lines.
+       The 105px label column keeps the actual
+       research text aligned on every wrapped line.
+    */
+
+    .research-line {
+        grid-template-columns:
+            105px
+            minmax(0, 1fr);
+    }
+
+    .research-line b {
+        line-height: 1.25;
+    }
+
+
+    /*
+       Extra space above Aisha's name.
+    */
+
+    .info-table tr:first-child td {
+        padding-top: 20px;
+    }
+
 
     .info-table tr:last-child td {
         padding-bottom: 15px;
